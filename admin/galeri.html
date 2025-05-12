@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Admin Dashboard - Rental Mobil</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+
+<body>
+    <button id="menu-toggle" class="btn btn-outline-secondary d-md-none m-3">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <aside id="sidebar" class="sidebar text-white">
+        <div class="sidebar-header text-center py-3 border-bottom">
+            <a class="navbar-brand text-white fw-bold" href="/admin/dashboard.html">
+                KitaKita Rent Car
+            </a>
+        </div>
+        <ul class="nav flex-column p-3">
+            <li class="nav-item">
+                <a class="nav-link text-white fw-bold" href="/admin/dashboard.html">
+                    <i class="fas fa-box me-2"></i> Dashboard
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white fw-bold" href="/admin/armada.html">
+                    <i class="fas fa-car me-2"></i> Armada
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white fw-bold" href="/admin/galeri.html">
+                    <i class="fas fa-image me-2"></i> Galeri
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white fw-bold" href="/admin/travel.html">
+                    <i class="fas fa-image me-2"></i> Travel
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white fw-bold" href="/admin/kategori.html">
+                    <i class="fas fa-image me-2"></i> Category
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white fw-bold" href="/admin/testimoni.html">
+                    <i class="fas fa-box me-2"></i> Testimoni
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white fw-bold" href="/admin/kontak.html">
+                    <i class="fas fa-blog me-2"></i> Kontak
+                </a>
+            </li>
+            <li class="nav-item">
+                <form method="POST" class="d-inline w-100">
+                    <button type="submit" class="nav-link text-white fw-bold btn w-100 text-start"
+                        style="background: none; border: none;">
+                        <i class="fas fa-right-from-bracket me-2"></i> Logout
+                    </button>
+                </form>
+            </li>
+        </ul>
+    </aside>
+
+    <div id="main-content" class="container mt-4 px-3 px-md-5">
+        <h2>Daftar Galeri</h2>
+
+        <button class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#createModal">
+            + Tambah Gambar
+        </button>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Judul</th>
+                    <th>Gambar</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Danau Toba</td>
+                    <td>
+                        <img src="/asset/mobil1.png" width="100">
+                    </td>
+                    <td>
+                        <button class="btn btn-warning btn-sm" data-bs-toggle="modal"
+                            data-bs-target="#editModal">Edit</button>
+                        <form method="POST" style="display:inline-block">
+                            <button class="btn btn-danger btn-sm"
+                                onclick="return confirm('Yakin hapus?')">Hapus</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Modal Create -->
+        <div class="modal fade" id="createModal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <form method="POST" enctype="multipart/form-data" class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Tambah Gambar</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label>Judul</label>
+                            <input type="text" name="title" class="form-control">
+                        </div>
+
+                        <div class="mb-3">
+                            <label>Gambar</label>
+                            <input type="file" name="image" class="form-control">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Modal Edit -->
+        <div class="modal fade" id="editModal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <form method="POST" enctype="multipart/form-data" class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Edit Gambar</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label>Judul</label>
+                            <input type="text" name="title" class="form-control">
+                        </div>
+
+                        <div class="mb-3">
+                            <label>Gambar</label>
+                            <input type="file" name="image" class="form-control">
+                        </div>  
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                        <button type="submit" class="btn btn-success">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/admin.js"></script>
+</body>
+
+</html>

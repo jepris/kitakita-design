@@ -1,0 +1,103 @@
+/* --- Sidebar ---
+/* .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #840808;
+    transition: transform 0.3s ease;
+    z-index: 1040;
+  }
+
+  .testimoni th{
+    background-color: #840808;
+    color: white;
+    text-align: center;
+  }
+  
+  /* Mobile: sidebar disembunyikan */
+  /* @media (max-width: 767.98px) {
+    .sidebar {
+      transform: translateX(-100%);
+    }
+  
+    .sidebar.show {
+      transform: translateX(0);
+    }
+  
+    #main-content.sidebar-open {
+      margin-left: 0;
+    }
+  } */
+  
+  /* Laptop & Desktop: sidebar selalu muncul */
+  /* @media (min-width: 768px) {
+    #main-content {
+      margin-left: 250px;
+      transition: margin-left 0.3s ease;
+    }
+  
+    .sidebar {
+      transform: translateX(0) !important;
+    }
+  }
+
+/* Sidebar Style */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100dvh;
+  background-color: #840808;
+  transition: transform 0.3s ease;
+  z-index: 1040;
+  overflow-y: auto;
+  font-size: 1rem; /* default font size */
+}
+
+.sidebar .nav-link {
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem; /* cocok untuk mobile */
+}
+
+.sidebar-header {
+  font-size: 1.1rem;
+}
+
+/* Konten utama */
+#main-content {
+  padding-top: 20px;
+}
+
+/* Mobile: sembunyikan sidebar, hilangkan margin kiri */
+@media (max-width: 767.98px) {
+  .sidebar {
+    transform: translateX(-100%);
+    font-size: 0.9rem;
+  }
+
+  .sidebar.show {
+    transform: translateX(0);
+  }
+
+  #main-content {
+    margin-left: 0 !important;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Desktop: sidebar selalu muncul dan ada margin */
+@media (min-width: 768px) {
+  .sidebar {
+    transform: translateX(0) !important;
+  }
+
+  #main-content {
+    margin-left: 215px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
